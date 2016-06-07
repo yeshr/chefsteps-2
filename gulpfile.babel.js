@@ -189,7 +189,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    [/*'lint', */'html', 'scripts', 'copy', 'copy:heroku'],
+    [/*'lint', */'html', 'scripts', 'copy'/*, 'copy:heroku'*/],
     cb
   )
 );
