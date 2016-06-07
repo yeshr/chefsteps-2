@@ -219,13 +219,13 @@ describe('Starting test suite for ChefSteps', function() {
   describe('To show the time taken to filter out unique emails for', function() {
     it('Input list of size 100000 is less than a sec', function() {
       var timer = cs.init(20);
-      expect((timer.endTime - timer.startTime) / 1000).toBeLessThan(1);
+      expect((timer.endTime - timer.startTime)).toBeLessThan(1000);
 
       timer = cs.init(2000);
-      expect((timer.endTime - timer.startTime) / 1000).toBeLessThan(1);
+      expect((timer.endTime - timer.startTime)).toBeLessThan(1000);
 
       timer = cs.init();
-      expect((timer.endTime - timer.startTime) / 1000).toBeLessThan(1);
+      expect((timer.endTime - timer.startTime)).toBeLessThan(1000);
     });
   });
 });
