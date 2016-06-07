@@ -55,6 +55,15 @@ gulp.task('copy', () =>
     .pipe($.size({title: 'copy'}))
 );
 
+gulp.task('copy:heroku', () =>
+  gulp.src([
+    'server.js',
+    'heroku.json'
+  ]).pipe($.if('heroku.json', $.rename('package.json')))
+    .pipe(gulp.dest('dist'))
+    .pipe($.size({title: 'copy heroku'}))
+);
+
 // Compile and automatically prefix stylesheets
 gulp.task('styles', () => {
   const AUTOPREFIXER_BROWSERS = [
@@ -180,7 +189,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    [/*'lint', */'html', 'scripts', 'copy'],
+    [/*'lint', */'html', 'scripts', 'copy', 'copy:heroku'],
     cb
   )
 );

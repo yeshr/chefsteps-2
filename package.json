@@ -1,7 +1,7 @@
 {
   "name": "chefsteps-2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "gulp-if": "^2.0.0",
     "gulp-load-plugins": "^1.0.0",
     "gulp-newer": "^1.0.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.0",
     "gulp-size": "^2.1.0",
     "gulp-uncss": "^1.0.0",
